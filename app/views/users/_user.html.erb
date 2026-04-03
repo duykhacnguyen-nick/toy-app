@@ -9,4 +9,16 @@
     <%= user.email %>
   </div>
 
+  <% first_post = user.microposts.first %>
+  <% if first_post %>
+    </br>
+    <strong>First Post:</strong>
+    <%= render first_post %> 
+    <p>
+      <%= link_to "Show this micropost", first_post %>
+    </p>
+  <% else %>
+    <p>This user has no posts yet.</p>
+  <% end %>
+
 </div>
